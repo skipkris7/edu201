@@ -18,7 +18,7 @@ function MainPage(){
         <div className="container text-center my-5">
             <h1>ПОМОГАЕМ ПРОСТО ПОМОГАТЬ</h1>
             <h3>Благотворительный фонд "Буду рядом" создан объединить неравнодушных людей для оказания помощи животным</h3>
-            <img src={logo} className="Fond-logo w-30" alt="logo" />
+            <img src={logo} className="Fond-logo w-10" alt="logo" />
         </div>
     )
 }
