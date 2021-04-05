@@ -8,6 +8,7 @@ import {ContactUs} from "./components/ContactUs";
 import {PostList} from "./components/PostList";
 import {Post} from "./components/Post";
 import {AddPost} from "./components/AddPost";
+import {Reg} from "./components/Reg";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/contact-us" render={()=><ContactUs/>}/>
             <Route path="/post" render={()=><Post/>}/>
             <Route path="/addPost" render={()=><AddPost/>}/>
+            <Route path="/reg" render={()=><Reg/>}/>
         </BrowserRouter>
     </div>
   );
