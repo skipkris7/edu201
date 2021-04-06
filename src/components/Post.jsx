@@ -1,28 +1,29 @@
 import React from "react";
 
 export class Post extends React.Component{
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            post:{}
-        };
+            title: "",
+            text: "",
+            data_added: "",
+            author: ""
+        }
     }
 
     componentDidMount(){
         const formData = new FormData();
-        formData.append('id',1);
+        formData.append('id',this.props.match.params.id);
         fetch("http://skipkris7.beget.tech/SPA/php/getPost.php",{
             method: 'POST',
             body: formData
         }).then(response=>response.json())
-            .then(result => {
+            .then(result=>{
                 this.setState({
-                    post: {
                         title: result.title,
                         author: result.author,
                         text: result.text,
                         data_added: result.data_added
-                    }
                 })
             })
     }
@@ -30,10 +31,10 @@ export class Post extends React.Component{
     render(){
         return(
             <div>
-                <h1>{this.state.post.title}</h1>
-                <h6>Автор: {this.state.post.author}</h6>
-                <p>{this.state.post.text}</p>
-                <p>Дата создания: {this.state.post.data_added}</p>
+                <h1>{this.state.title}</h1>
+                <h6>Автор: {this.state.author}</h6>
+                <p>{this.state.text}</p>
+                <p>Дата создания: {this.state.data_added}</p>
             </div>
             )
     }
